@@ -63,7 +63,7 @@ h2::before { content: "[ "; color: var(--dark); }
 .card-icon { width: 60px; height: 60px; border: 1px solid var(--dark); background: var(--bg); }
 .card h3 { margin: 0; font-size: 24px; letter-spacing: 2px; font-weight: normal; }
 .tag { color: var(--dim); font-size: 15px; letter-spacing: 2px; }
-.card p { color: var(--faint); margin: 0 18px 18px 0; font-size: 19px; }
+.card p { color: var(--dim); margin: 0 18px 18px 0; font-size: 19px; }
 .card-links { display: flex; gap: 12px; flex-wrap: wrap; }
 .placeholder .ghost { width: 60px; height: 60px; border: 1px dashed var(--dark); }
 .card.placeholder { opacity: .7; }
