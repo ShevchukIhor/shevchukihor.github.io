@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShevchukIhor — Independent Mobile Developer · Solana Mobile</title>
   <meta name="description" content="Independent developer building local-first, no-cloud Android apps for Solana Seeker — PipStats, Visor and more.">
-  <meta name="theme-color" content="#00FF00">
+  <meta name="theme-color" content="#020402">
   <meta property="og:title" content="ShevchukIhor — Independent Mobile Developer · Solana Mobile">
   <meta property="og:description" content="Local-first, no-cloud Android apps for Solana Seeker: PipStats (on-device usage & battery stats) and Visor (vision training). Hardware-backed signing via Seed Vault.">
   <meta property="og:type" content="website">
@@ -14,10 +14,13 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/logo-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">SKIP TO CONTENT</a>
+  <div class="sweep" aria-hidden="true"></div>
   <header>
     <div class="wrap nav">
       <a class="brand" href="index.html">~ SHEVCHUKIHOR</a>
@@ -31,9 +34,9 @@
     </div>
   </header>
 
-  <section class="wrap hero">
+  <section id="main" class="wrap hero">
     <p class="kicker">INDEPENDENT MOBILE DEVELOPER</p>
-    <h1>LOCAL-FIRST APPS<br>FOR SOLANA MOBILE</h1>
+    <h1><span class="type">LOCAL-FIRST APPS</span><br><span class="type">FOR SOLANA MOBILE</span></h1>
     <p class="lede">Honest, on-device tools for Solana Seeker. No cloud, no trackers, no accounts. Hardware-backed signing via Seed Vault &amp; Mobile Wallet Adapter.</p>
     <div class="cta">
       <a class="btn primary" href="#work">SEE MY WORK</a>
@@ -41,7 +44,7 @@
     </div>
   </section>
 
-  <section id="about" class="wrap">
+  <section id="about" class="wrap reveal">
     <h2>ABOUT</h2>
     <p>
       I build <strong>local-first software</strong> for the Solana Mobile ecosystem (Solana
@@ -60,9 +63,9 @@
   <section id="work" class="wrap">
     <h2>WORK</h2>
     <div class="cards">
-      <article class="card">
+      <article class="card reveal">
         <div class="card-head">
-          <img class="card-icon" src="assets/logo-icon.png" alt="PipStats icon">
+          <img class="card-icon" src="assets/logo-icon.png" alt="PipStats icon" width="60" height="60">
           <div>
             <h3>PIPSTATS</h3>
             <span class="tag">ANDROID / FLUTTER</span>
@@ -75,9 +78,9 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
         <div class="card-head">
-          <img class="card-icon" src="assets/visor-icon.png" alt="Visor icon">
+          <img class="card-icon" src="assets/visor-icon.png" alt="Visor icon" width="60" height="60">
           <div>
             <h3>VISOR</h3>
             <span class="tag">ANDROID / FLUTTER</span>
@@ -90,7 +93,7 @@
         </div>
       </article>
 
-      <article class="card placeholder">
+      <article class="card placeholder reveal">
         <div class="card-head">
           <div class="ghost"></div>
           <div><h3>MORE COMING</h3><span class="tag">NEXT</span></div>
@@ -102,7 +105,7 @@
 
   <section id="contact" class="wrap">
     <h2>CONTACT</h2>
-    <ul class="contact">
+    <ul class="contact reveal">
       <li><a href="https://github.com/ShevchukIhor">github.com/ShevchukIhor</a></li>
       <li><a href="mailto:bluesjazz666@gmail.com">bluesjazz666@gmail.com</a></li>
     </ul>
@@ -113,8 +116,32 @@
       <a href="terms.html">TERMS</a><span>|</span>
       <a href="privacy.html">PRIVACY</a><span>|</span>
       <a href="https://github.com/ShevchukIhor">GITHUB</a>
+      <span>|</span>
+      <button class="hint" id="pipboy-open" type="button">[E] PIP-BOY</button>
     </div>
     <p class="copy">© 2026 SHEVCHUKIHOR · BUILT FOR SOLANA MOBILE · LOCAL-FIRST</p>
   </footer>
+
+  <div id="pipboy" class="pipboy" hidden role="dialog" aria-modal="true" aria-label="Pip-Boy panel">
+    <div class="pipboy-inner">
+      <div class="pipboy-head">
+        <span class="pipboy-title">PIP-BOY 3000</span>
+        <button id="pipboy-close" class="btn sm" type="button">CLOSE</button>
+      </div>
+      <div class="pipboy-grid">
+        <div class="pipboy-stat"><span class="pipboy-label">TIME</span><span id="pb-clock">--:--:--</span></div>
+        <div class="pipboy-stat"><span class="pipboy-label">BATTERY</span><span class="pipboy-batt" aria-hidden="true"><i style="width:87%"></i></span><span>87%</span></div>
+        <div class="pipboy-stat"><span class="pipboy-label">SIGNAL</span><span>LOCAL · NO CLOUD</span></div>
+      </div>
+      <p class="pipboy-label">INVENTORY</p>
+      <ul class="pipboy-inv">
+        <li><a href="#work">PIPSTATS</a><span>READY</span></li>
+        <li><a href="#work">VISOR</a><span>READY</span></li>
+        <li class="dim"><span>???</span><span>IN PROGRESS</span></li>
+      </ul>
+      <p class="pipboy-hint">PRESS [E] OR [ESC] TO CLOSE</p>
+    </div>
+  </div>
+  <script src="pipboy.js"></script>
 </body>
 </html>
